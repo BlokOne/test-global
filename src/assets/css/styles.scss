@@ -1,0 +1,17 @@
+@import "nullstyle";
+@import "header";
+@import "head";
+@import "picWithAnim";
+
+body {
+  background: #ecf7f3;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 1106/1400 * 100%;
+  margin: 0 auto;
+  @media (max-width: 425px) {
+    width: 90%;
+  }
+}
