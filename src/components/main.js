@@ -15,12 +15,17 @@ if (iconMenu) {
 
 buttonSub.addEventListener("click", () => {
    errorArea.innerHTML = ""
-   if (input.value.match(/[!@#$%^&*()]+/)) {
-      errorArea.innerHTML = "prohibition on entering characters !@#$%^&*()"
+   if (input.value.length > 3 && input.value.length < 13) {
+      if (input.value.match(/[!@#$%^&*()]+/)) {
+         errorArea.innerHTML = "prohibition on entering characters !@#$%^&*()"
+      } else {
+         input.value = "";
+         alert('Submit Done')
+      }
    } else {
-      input.value = "";
-      alert('Submit Done')
+      errorArea.innerHTML = "min:4 - max: 12 symbols"
    }
+
 })
 
 fetch("https://baconipsum.com/api/?type=lucky").then(function (response) {
